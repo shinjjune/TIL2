@@ -75,7 +75,7 @@ class RoomAdmin(admin.ModelAdmin):
         "country",
     )
 
-    raw_id_fields = ("amenities",)
+    # raw_id_fields = ("amenities",)
 
     search_fields = ("=city", "^host__username")
 
@@ -90,6 +90,8 @@ class RoomAdmin(admin.ModelAdmin):
 
     def count_photos(self, obj):
         return obj.photos.count()
+
+    count_photos.short_description = "Photo Count"
 
 
 @admin.register(models.Photo)

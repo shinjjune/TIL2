@@ -23,6 +23,14 @@ class Command(BaseCommand):
             "Restaurant",
             "Shopping Mall",
             "Bathtub",
+            "Book",
+            "Cup",
+            "Orange juice",
+            "Wine",
+            "Beer",
+            "Air conditioner",
+            "Water",
+            "Brush",
         ]
         for a in amenities:
             Amenity.objects.create(name=a)
