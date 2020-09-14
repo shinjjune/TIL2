@@ -132,3 +132,12 @@ AUTH_USER_MODEL = "users.User"
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 MEDIA_URL = "/media/"
+
+
+# Email Configuration
+
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
+EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
+EMAIL_FROM = "sexy-guy@sandbox1e8cd5a9a5b14e52aa946941825ebbf7.mailgun.org"
