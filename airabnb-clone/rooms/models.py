@@ -23,7 +23,7 @@ class RoomType(AbstractItem):
 
     class Meta:
         verbose_name = "Room Type"
-        ordering = ["created"]
+        # ordering = ["created"]
 
 
 class Amenity(AbstractItem):
@@ -37,6 +37,8 @@ class Amenity(AbstractItem):
 class Facility(AbstractItem):
 
     """ Facility Model Definition """
+
+    pass
 
     class Meta:
         verbose_name_plural = "Facilities"
@@ -109,6 +111,9 @@ class Room(core_models.TimeStampedModel):
         return 0
 
     def first_photo(self):
-        (photo,) = self.photos.all()[:1]
-        return photo.file.url
-
+        try:
+            photo, = self.photos.all()[:1]
+            return photo.file.url
+        except ValueError:
+            return None
+        # return photo.file.url
